@@ -1,1 +1,26 @@
+# Vivado 專案與編譯暫存檔
+*.jou
+*.log
+*.pb
+*.wdb
+*.wcfg
+*.str
+*.zip
+.Xil/
 
+# 模擬與合成產出檔 (通常很大，且可由原始碼重新生成)
+*.sim/
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.xpr
+
+# 為了保留專案結構，我們不忽略原始碼與約束檔
+# !*.v
+# !*.xdc
+# !*.xci 
+
+# 作業系統產生的系統隱藏檔
+.DS_Store
+Thumbs.db
