@@ -4,31 +4,31 @@ Designed and implemented a hardware-level elevator control system on an FPGA pla
 
 ## ✨ Key Features
 
-*   **Finite State Machine (FSM):** Engineered a robust FSM to manage four distinct operational states: `stop` (stationary), `up` (moving upward), `down` (moving downward), and `door` (opening/closing)[cite: 1, 2].
+*   **Finite State Machine (FSM):** Engineered a robust FSM to manage four distinct operational states: `stop` (stationary), `up` (moving upward), `down` (moving downward), and `door` (opening/closing).
 *   **Multi-Frequency Clock Division:** Down-sampled a 100 MHz system clock (`CLK`) to achieve precise timing constraints: 1 Hz for floor-to-floor travel, 2 Hz for door operations, and 1 kHz for 7-segment display multiplexing.
-*   **Automated Door Logic:** Implemented automated door control that keeps the doors fully open for 3 seconds before automatically initiating the closing sequence[cite: 1, 2].
+*   **Automated Door Logic:** Implemented automated door control that keeps the doors fully open for 3 seconds before automatically initiating the closing sequence.
 *   **Hardware Visualization:** Integrated hardware peripherals for real-time system tracking:
-    *   **7-Segment Displays:** Multiplexed displays (`LEFTEN`, `RIGHTEN`, `LEFT_DISPLAY`, `RIGHT_DISPLAY`) to indicate the current operational state and track the floor position (Floor 1 to Floor 2)[cite: 1, 2, 3].
-    *   **LED Arrays:** Utilized `LED[15:2]` to animate and simulate the door opening/closing behavior, while `LED[1:0]` visually indicate pending external floor requests[cite: 1, 2, 3].
-*   **Robust Input Handling:** Processes concurrent internal cabin destination selections (`ELE_IN`, `ENTER`) and external floor calls (`UP`, `DOWN`), with a reliable asynchronous active-low reset (`RSTN`)[cite: 1, 2, 3].
+    *   **7-Segment Displays:** Multiplexed displays (`LEFTEN`, `RIGHTEN`, `LEFT_DISPLAY`, `RIGHT_DISPLAY`) to indicate the current operational state and track the floor position (Floor 1 to Floor 2).
+    *   **LED Arrays:** Utilized `LED[15:2]` to animate and simulate the door opening/closing behavior, while `LED[1:0]` visually indicate pending external floor requests.
+*   **Robust Input Handling:** Processes concurrent internal cabin destination selections (`ELE_IN`, `ENTER`) and external floor calls (`UP`, `DOWN`), with a reliable asynchronous active-low reset (`RSTN`).
 
 ## 📝 File Structure & Description
 
 | File Name | Module Level | Description |
 |---|---|---|
-| [`lab5_4.v`](lab5_4.v) | **Top & Sub Module** | Contains the top-level integration (`Elevator_System_Design`) and the core logic (`Lab5_4`), encompassing the FSM, clock dividers, and hardware decoders[cite: 3]. |
+| [`lab5_4.v`](lab5_4.v) | **Top & Sub Module** | Contains the top-level integration (`Elevator_System_Design`) and the core logic (`Lab5_4`), encompassing the FSM, clock dividers, and hardware decoders. |
 
 ## 🕹️ Hardware I/O Mapping
 
 | Signal Name | Direction | Function |
 |---|---|---|
-| `CLK` / `RSTN` | Input | 100MHz system clock / Asynchronous active-low reset[cite: 1, 2, 3]. |
-| `UP` / `DOWN` | Input | External requests from Floor 1 (Up) and Floor 2 (Down)[cite: 1, 2, 3]. |
-| `ELE_IN` / `ENTER` | Input | Internal cabin floor selection (0=Floor 1, 1=Floor 2) and confirmation button[cite: 1, 2, 3]. |
-| `OPEN` / `CLOSE` | Input | Manual door override buttons (effective only in `stop` or `door` states)[cite: 1, 2, 3]. |
-| `LEFT_DISPLAY` | Output | 7-segment output displaying the current FSM state (e.g., "Stop", "Up", "dn")[cite: 1, 2, 3]. |
-| `RIGHT_DISPLAY` | Output | 7-segment output displaying the current floor and internal requests[cite: 1, 2, 3]. |
-| `LED[15:0]` | Output | Door animation simulation (`LED[15:2]`) and external request indicators (`LED[1:0]`)[cite: 1, 2, 3]. |
+| `CLK` / `RSTN` | Input | 100MHz system clock / Asynchronous active-low reset. |
+| `UP` / `DOWN` | Input | External requests from Floor 1 (Up) and Floor 2 (Down). |
+| `ELE_IN` / `ENTER` | Input | Internal cabin floor selection (0=Floor 1, 1=Floor 2) and confirmation button. |
+| `OPEN` / `CLOSE` | Input | Manual door override buttons (effective only in `stop` or `door` states). |
+| `LEFT_DISPLAY` | Output | 7-segment output displaying the current FSM state (e.g., "Stop", "Up", "dn"). |
+| `RIGHT_DISPLAY` | Output | 7-segment output displaying the current floor and internal requests. |
+| `LED[15:0]` | Output | Door animation simulation (`LED[15:2]`) and external request indicators (`LED[1:0]`). |
 
 
 ---
