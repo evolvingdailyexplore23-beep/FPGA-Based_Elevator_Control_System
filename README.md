@@ -16,7 +16,7 @@ Designed and implemented a hardware-level elevator control system on an FPGA pla
 
 | File Name | Module Level | Description |
 |---|---|---|
-| [`lab5_4.v`](lab5_4.v) | **Top & Sub Module** | Contains the top-level integration (`Elevator_System_Design`) and the core logic (`Lab5_4`), encompassing the FSM, clock dividers, and hardware decoders. |
+| [Elevator_Control_System](Elevator_Control_System.v) | **Top & Sub Module** | Contains the top-level integration (`Elevator_System_Design`) and the core logic (`Lab5_4`), encompassing the FSM, clock dividers, and hardware decoders. |
 
 ## 🕹️ Hardware I/O Mapping
 
