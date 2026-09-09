@@ -31,6 +31,6 @@ Designed and implemented a hardware-level elevator control system on an FPGA pla
 | `LED[15:0]` | Output | Door animation simulation (`LED[15:2]`) and external request indicators (`LED[1:0]`). |
 
 
-🎥 [Demo Video](https://www.youtube.com/watch?v=06lsu6NmFRM)
+## 🎥 [Demo Video](https://www.youtube.com/watch?v=06lsu6NmFRM)
 ---
 
